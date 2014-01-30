@@ -1,0 +1,59 @@
+<?php
+date_default_timezone_set('Europe/Paris');
+
+$app = array(
+'locale' = 'fr_FR',
+'charset' = 'UTF-8',
+'name' = 'Sporting',
+'title' = 'Sporting',
+'description' = 'Manger bouffer',
+'authors' = 'Fylhan',
+'keywords' = 'sport',
+);
+
+// Constantes d'état du site
+define('ETAT', 'production'); // developpement, production, maintenance
+define('HEBERGEMENT', 'en ligne'); // local, en ligne
+define('DEBUG', false); // true, false
+
+// Constantes de chemins
+// Convention : on ne termine jamais terminé par un slash !
+if (!defined('POSITION_RELATIVE')) {
+	define('POSITION_RELATIVE', '');
+}
+define('CACHE_PATH', POSITION_RELATIVE.'data/cache');
+define('CONFIG_PATH', POSITION_RELATIVE.'data/config');
+if (HEBERGEMENT == 'local') {
+	define('SITE_PATH', 'http://localhost/Projet/Web/Perso/cep-saint-maur/');
+}
+else {
+	define('SITE_PATH', 'http://cepsaintmaur.fr/');
+}
+
+if (DEBUG) {
+	ini_set('display_errors', true);
+	ini_set('log_errors', true);
+}
+error_reporting(E_ALL);
+ini_set('error_log', CACHE_PATH.'/error_log.txt');
+define('MessageLog', CACHE_PATH.'/message_log.txt');
+
+define('SRC_PATH', POSITION_RELATIVE . 'src');
+define('VENDOR_PATH', POSITION_RELATIVE . 'vendor');
+define('APP_PATH', POSITION_RELATIVE . 'app');
+define('CONFIG_PATH', POSITION_RELATIVE . 'app/config');
+define('WEB_PATH', POSITION_RELATIVE . 'web');
+define('CSS_PATH', POSITION_RELATIVE . 'web/css');
+define('JS_PATH', POSITION_RELATIVE . 'web/js');
+define('IMG_PATH', POSITION_RELATIVE . 'web/img');
+define('TPL_PATH', POSITION_RELATIVE . 'web/tpl');
+
+if (!defined('CacheEnabled')) {
+	define('CacheEnabled', !DEBUG);
+}
+if (!defined('CompressionEnabled')) {
+	define('CompressionEnabled', true);
+}
+if (!defined('StyleEnabled')) {
+	define('StyleEnabled', true);
+}
