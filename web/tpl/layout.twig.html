@@ -24,6 +24,7 @@
 <body>
 <header id="header" role="header">
 {% block header %}
+	<span id="configurationHandler" onclick="showConfiguration();" title="Afficher l'onglet de configuration">𝌆</span>
 	<h1><a href="{{ app.url }}">{{ app.name }}</a></h1>
 	<p>{{ app.desc }}</p>
 {% endblock header %}
@@ -35,20 +36,18 @@
 
 {% block content %}
 <aside id="configuration">
-	<h2 id="configurationHandler" onclick="showConfiguration();">Configuration <span id="configurationArrow"></span></h2>
-	<div id="configurationBox">
-		<label for="workTime">Working time</label> <input type="number" name="workTime" id="workTime" value="30" size="5" maxlength="5" /><br />
-		<label for="restTime">Rest time</label> <input type="number" name="restTime" id="restTime" value="10" size="5" maxlength="5" /><br />
-	</div>
+	<h2>Configuration</h2>
+	<label for="workTime">Working time</label> <input type="number" name="workTime" id="workTime" value="30" size="5" maxlength="5" /><br />
+	<label for="restTime">Rest time</label> <input type="number" name="restTime" id="restTime" value="10" size="5" maxlength="5" /><br />
 </aside>
 <article role="main-content">
 	<h2>Coach</h2>
 	<input type="button" id="coutdownHandler" value="Start" onclick="start();" />
 	<input type="button" value="Stop" onclick="stop();" />
-	<span id="countdown"></span>
-	<span id="action"></span>
+	<span id="countdown">10</span>
+	<span id="action">Repos</span>
 	<figure id="steps">
-		<img src="{{IMG_PATH}}/fitness_12-exercices_30s-par-exercice_10s-entre-2.jpg" alt="12 exercices de Fitness : 30s par exercice, 10s de pause entre 2" />
+		<a href="{{IMG_PATH}}/fitness_12-exercices_30s-par-exercice_10s-entre-2.jpg" id="actions">Illustration de 12 exercices de Fitness : 30s par exercice, 10s de pause entre 2</a>
 	</figure>
 </article>
 {% endblock content %}

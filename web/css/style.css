@@ -144,8 +144,7 @@ ul li {
 /* Footer */
 footer {
 	clear: both;
-	/*min-width: 580px;*/
-	margin: 30px 150px 10px 220px;
+	margin: 30px auto 10px auto;
 	padding: 0;
 	font-size: 0.7em;
 	text-align: center;
@@ -312,6 +311,9 @@ footer {
 }
 
 /* Countdown */
+article[role="main-content"] h2{
+display: none;
+}
 #countdown{
 display: block;
 text-align: center;
@@ -322,21 +324,40 @@ display: block;
 text-align: center;
 font-size: 3em;
 }
+#actions{
+display: block;
+width: 592px;
+height: 557px;
+margin: 0 auto;
+background: url(../img/fitness_12-exercices_30s-par-exercice_10s-entre-2.jpg) no-repeat 0 top;
+text-indent: -15000px;
+}
+#actions.oneStep{
+width: 148px;
+height: 185px;
+}
+#actions.step1{
+background-position: 0 top;
+}
+#actions.step2{
+background-position: -148px 0;
+}
+#actions.step6{
+background-position: -148px -185px;
+}
 
 /* Config */
-#configuration{
+aside h2, article h2{
 margin: 0 auto 10px 0;
 padding: 0;
-border: 1px solid black;
 }
 #configurationHandler{
-margin: 0;
+float: left;
+margin: 0 -10% 0 10%;
 padding: 0;
-border-bottom: 1px solid black;
-font-size: 1.2em;
+font-size: 1.5em;
 cursor: pointer;
+text-decoration: none;
+color: white;
 }
-#configurationArrow {
-font-size: 0.8em;
-font-weight: none;
-}
+
