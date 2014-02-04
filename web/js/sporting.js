@@ -4,11 +4,12 @@ var isWork = true;
 var count;
 var countY;
 var params = {
-		'width': 592,
-		'height': 557,
+		'width': 560,
+		'height': 420,
 		'xNumber': 4,
 		'yNumber': 3,
 		'number': 12,
+		'actions': ['Jumping jacks', 'Wall sit', 'Push-up', 'Abdominal crunch', 'Step-up onto chair', 'Squat', 'Triceps dip on chair', 'Plank', 'High knees running in place', 'Lunge', 'Push-up and rotation', 'Side plank'],
 };
 
 function getStyle(elem, cssprop, cssprop2){
@@ -58,14 +59,19 @@ function timer() {
 			timeLeft = document.getElementById('workTime').value;
 			timeLeft++;
 		}
+		
+		if (document.getElementById('soundEnabled').checked) {
+			document.getElementById('bipHandler').play();
+		}
+		document.getElementById('action').innerHTML = (isWork ? (count+1)+' - '+params.actions[count] : 'Repos');
+		document.getElementById('actions').style.width=(params.width/params.xNumber)+'px';
+		console.log('-'+((count%params.xNumber)*(params.width/params.xNumber))+'px -'+(countY*(params.height/params.yNumber))+'px');
+		document.getElementById('actions').style.height=(params.height/params.yNumber)+'px';
+		document.getElementById('actions').style.backgroundPosition='-'+((count%params.xNumber)*(params.width/params.xNumber))+'px -'+(countY*(params.height/params.yNumber))+'px';
 	}
 	
 	timeLeft -= 1;
 	document.getElementById('countdown').innerHTML = timeLeft;
-	document.getElementById('action').innerHTML = (isWork ? 'Go étape '+(count+1) : 'Repos');
-	document.getElementById('actions').style.width=(params.width/params.xNumber)+'px';
-	document.getElementById('actions').style.height=(params.height/params.yNumber)+'px';
-	document.getElementById('actions').style.backgroundPosition='-'+((count%params.xNumber)*(params.width/params.xNumber))+'px -'+(countY*(params.height/params.yNumber))+'px';
 }
 
 function showConfiguration() {

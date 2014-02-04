@@ -16,7 +16,7 @@
 	{% endblock stylesheets %}
 	{% block properties %}
 	<link rel="start" href="{{ app.url }}" title="Accueil" />
-	<link rel="help" href="politique-accessibilite.html" title="Accessibilité" />
+	<link rel="help" href="politique-accessibilite.html" title="AccessibilitÃ©" />
 	<link rel="accesskeys" href="politique-accessibilite.html#accesskeys" title="Raccourcis et Accesskeys" />
 	<link rel="shortcut icon" href="{{IMG_PATH}}/favicon.ico" type="image/ico" />
 	{% endblock properties %}
@@ -37,8 +37,12 @@
 {% block content %}
 <aside id="configuration">
 	<h2>Configuration</h2>
-	<label for="workTime">Working time</label> <input type="number" name="workTime" id="workTime" value="30" size="5" maxlength="5" /><br />
-	<label for="restTime">Rest time</label> <input type="number" name="restTime" id="restTime" value="10" size="5" maxlength="5" /><br />
+	<label for="workTime">Durée d'un exercice</label> <input type="number" name="workTime" id="workTime" value="30" size="5" maxlength="5" /> s<br />
+	<label for="restTime">Durée du repos</label> <input type="number" name="restTime" id="restTime" value="10" size="5" maxlength="5" /> s<br />
+	<label>
+		<input type="checkbox" name="soundEnabled" id="soundEnabled" value="1" checked="checked" />
+		Activer le son
+	</label><br />
 </aside>
 <article role="main-content">
 	<h2>Coach</h2>
@@ -47,7 +51,7 @@
 	<span id="countdown">10</span>
 	<span id="action">Repos</span>
 	<figure id="steps">
-		<a href="{{IMG_PATH}}/fitness_12-exercices_30s-par-exercice_10s-entre-2.jpg" id="actions">Illustration de 12 exercices de Fitness : 30s par exercice, 10s de pause entre 2</a>
+		<a href="{{IMG_PATH}}/fitness-sprites.jpg" id="actions">Illustration de 12 exercices de Fitness : 30s par exercice, 10s de pause entre 2</a>
 	</figure>
 </article>
 {% endblock content %}
@@ -56,13 +60,13 @@
 <footer id="footer" role="footer">
 {% block footer %}
 <p>
-	© 2014 - {{ app.name }}<br />
-	Tous droits réservés
+	{{ app.name }} - Open source LGPL3.0<br />
 </p>
 {% endblock footer %}
 </footer>
 
 {% block javascripts %}
+<audio src="{{SOUND_PATH}}/black.ogg" id="bipHandler" preload></audio>
 <script type="text/javascript" src="{{JS_PATH}}/sporting.js"></script>
 {% endblock %}
 </body>

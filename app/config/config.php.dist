@@ -1,33 +1,34 @@
 <?php
 date_default_timezone_set('Europe/Paris');
 
-$app = array(
-'locale' = 'fr_FR',
-'charset' = 'UTF-8',
-'name' = 'Sporting',
-'title' = 'Sporting',
-'description' = 'Manger bouffer',
-'authors' = 'Fylhan',
-'keywords' = 'sport',
-);
-
 // Constantes d'état du site
-define('ETAT', 'production'); // developpement, production, maintenance
-define('HEBERGEMENT', 'en ligne'); // local, en ligne
-define('DEBUG', false); // true, false
+define('ETAT', 'developpement'); // developpement, production, maintenance
+define('HEBERGEMENT', 'local'); // local, en ligne
+define('DEBUG', true); // true, false
+
 
 // Constantes de chemins
 // Convention : on ne termine jamais terminé par un slash !
 if (!defined('POSITION_RELATIVE')) {
 	define('POSITION_RELATIVE', '');
 }
-define('CACHE_PATH', POSITION_RELATIVE.'data/cache');
-define('CONFIG_PATH', POSITION_RELATIVE.'data/config');
+define('CACHE_PATH', POSITION_RELATIVE.'app/cache');
+define('SRC_PATH', POSITION_RELATIVE . 'src');
+define('VENDOR_PATH', POSITION_RELATIVE . 'vendor');
+define('APP_PATH', POSITION_RELATIVE . 'app');
+define('CONFIG_PATH', POSITION_RELATIVE . 'app/config');
+define('WEB_PATH', POSITION_RELATIVE . 'web');
+define('CSS_PATH', POSITION_RELATIVE . 'web/css');
+define('JS_PATH', POSITION_RELATIVE . 'web/js');
+define('IMG_PATH', POSITION_RELATIVE . 'web/img');
+define('SOUND_PATH', POSITION_RELATIVE . 'web/sound');
+define('TPL_PATH', POSITION_RELATIVE . 'web/tpl');
+
 if (HEBERGEMENT == 'local') {
-	define('SITE_PATH', 'http://localhost/Projet/Web/Perso/cep-saint-maur/');
+	define('SITE_PATH', 'http://localhost/Projet/Web/Perso/minicoach/');
 }
 else {
-	define('SITE_PATH', 'http://cepsaintmaur.fr/');
+	define('SITE_PATH', 'http://fylhan.la-bnbox.fr/');
 }
 
 if (DEBUG) {
@@ -38,22 +39,27 @@ error_reporting(E_ALL);
 ini_set('error_log', CACHE_PATH.'/error_log.txt');
 define('MessageLog', CACHE_PATH.'/message_log.txt');
 
-define('SRC_PATH', POSITION_RELATIVE . 'src');
-define('VENDOR_PATH', POSITION_RELATIVE . 'vendor');
-define('APP_PATH', POSITION_RELATIVE . 'app');
-define('CONFIG_PATH', POSITION_RELATIVE . 'app/config');
-define('WEB_PATH', POSITION_RELATIVE . 'web');
-define('CSS_PATH', POSITION_RELATIVE . 'web/css');
-define('JS_PATH', POSITION_RELATIVE . 'web/js');
-define('IMG_PATH', POSITION_RELATIVE . 'web/img');
-define('TPL_PATH', POSITION_RELATIVE . 'web/tpl');
-
 if (!defined('CacheEnabled')) {
 	define('CacheEnabled', !DEBUG);
 }
 if (!defined('CompressionEnabled')) {
-	define('CompressionEnabled', true);
+	define('CompressionEnabled', false);
 }
 if (!defined('StyleEnabled')) {
 	define('StyleEnabled', true);
 }
+
+define('LOCALE', 'fr_FR');
+define('CHARSET', 'UTF-8');
+define('SITE_NAME', 'Mini Coach');
+
+$app = array(
+'locale' => LOCALE,
+'charset' => CHARSET,
+'name' => SITE_NAME,
+'url' => SITE_PATH,
+'title' => SITE_NAME,
+'description' => 'Manger bouffer',
+'authors' => 'Fylhan',
+'keywords' => 'sport, coach',
+);

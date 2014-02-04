@@ -61,6 +61,7 @@ class MainController
 			'JS_PATH' => JS_PATH,
 			'CSS_PATH' => CSS_PATH,
 			'IMG_PATH' => IMG_PATH,
+			'SOUND_PATH' => SOUND_PATH,
 			'app' => $app,
 			'page' => $this->response->getPage(),
 			'flash' => $this->response->getFlash()
