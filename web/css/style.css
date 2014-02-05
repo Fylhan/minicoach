@@ -169,10 +169,10 @@ footer {
 	padding: 0;
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 700px) {
 	#content {
 		width: 100%;
-		margin: 0 0 20px 0;
+		margin: 10px 0 20px 0;
 	}
 }
 
@@ -326,30 +326,61 @@ font-size: 3em;
 }
 #actions{
 display: block;
-width: 592px;
-height: 557px;
+width: 560px;
+height: 420px;
 margin: 0 auto;
-background: url(../img/fitness_12-exercices_30s-par-exercice_10s-entre-2.jpg) no-repeat 0 top;
+padding: 0;
+background: url(../img/fitness-sprites.jpg) no-repeat 0 top;
 text-indent: -15000px;
-}
-#actions.oneStep{
-width: 148px;
-height: 185px;
-}
-#actions.step1{
-background-position: 0 top;
-}
-#actions.step2{
-background-position: -148px 0;
-}
-#actions.step6{
-background-position: -148px -185px;
 }
 
 /* Config */
 aside h2, article h2{
 margin: 0 auto 10px 0;
 padding: 0;
+}
+#configuration{
+margin: -20px 0 10px 0;
+padding: 0;
+border-radius: 10px;
+border: 1px dotted black;
+width: 30%;
+margin-right: -30%;
+float: left;
+text-align: left;
+}
+@media screen and (max-width: 1000px) {
+	#configuration{
+	margin: -20px auto 10px auto;
+	float: none;
+	width: 95%;
+	min-width: none;
+	}
+}
+@media screen and (max-width: 700px) {
+	#configuration{
+	margin-top: 0;
+	}
+}
+
+#configuration h2{
+padding: 10px 10px 8px 10px;
+font-size: 0.9em;
+border-bottom: 1px solid black;
+border-radius: 10px 10px 0 0;
+background-color: lightgrey;
+margin-bottom: 15px;
+}
+#configuration label{
+margin: 0 0 10px 10px;
+display: inline-block;
+text-align: right;
+min-width: 45%;
+}
+#configuration input{
+margin: 0 10px 10px 0;
+display: inline-block;
+padding: 5px;
 }
 #configurationHandler{
 float: left;
