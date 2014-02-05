@@ -9,11 +9,14 @@ Work in progress
 --------------------------------
 ### Current tasks
 * [████100%] Add Composer support
-* [▒▒▒▒  0%] Go to PSR-0
-* [▒▒▒▒  0%] Make it work
+* [███▒ 90%] Go to PSR-0
+* [████100%] Make it work
+* [▒▒▒▒  0%] Offline access
 
 ### Future tasks
-* Nothing yet ;-)
+* [▒▒▒▒  0%] Translation
+* [▒▒▒▒  0%] Exercice description to allow several exercice
+* [▒▒▒▒  0%] Optimise JS, CSS, pictures, cache, ...
 
 ### Known bugs
 * Nothing yet ;-)

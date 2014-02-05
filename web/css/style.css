@@ -344,6 +344,7 @@ margin: -20px 0 10px 0;
 padding: 0;
 border-radius: 10px;
 border: 1px dotted black;
+box-shadow: 0 3px 6px rgb(0, 0, 0);
 width: 30%;
 margin-right: -30%;
 float: left;
